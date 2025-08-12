@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "akamud.vscode-theme-onedark",
+    "richie5um2.vscode-sort-json",
+    "vscode-icons-team.vscode-icons",
+    "alefragnani.Bookmarks",
+    "YoavBls.pretty-ts-errors",
+    "usernamehw.errorlens"
+  ]
+}

@@ -1,0 +1,38 @@
+import { Column, Entity } from 'typeorm';
+import Node from '../_Node/model';
+export const USER_HANDLE_MAX_LENGTH = 39; // Same max length as github
+
+@Entity()
+export default class User extends Node {
+  @Column({ unique: true })
+  firebaseUid: string;
+
+  @Column({ unique: true })
+  email: string;
+
+  @Column({ nullable: true })
+  photoURL: string;
+
+  @Column()
+  displayName: string;
+
+  @Column({ unique: true, length: USER_HANDLE_MAX_LENGTH })
+  handle: string;
+
+  @Column({ nullable: true })
+  stripeCustomerId: string;
+
+  @Column({ default: false })
+  rememberUser: boolean;
+
+  // @Column({ default: 'active' })
+  // status: 'active' | 'suspended' | 'cancelled';
+
+  //  account type = 'individual' | 'business'
+
+  // teams?
+  // friends
+  // subscriptions
+  // subsribers?
+  // ignore list
+}

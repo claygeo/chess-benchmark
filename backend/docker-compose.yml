@@ -1,0 +1,24 @@
+services:
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: dockerfile
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - '4000:4000'
+    depends_on:
+      - postgres #TODO: Use entrypoint.sh to wait for postgres to be ready
+
+  postgres:
+    image: 'postgres:14.5'
+    ports:
+      - '5432:5432'
+    restart: always

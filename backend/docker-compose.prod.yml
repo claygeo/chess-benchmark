@@ -1,0 +1,18 @@
+services:
+  frontend:
+    environment:
+      NODE_ENV: production # Don't use env.prod to avoid exposing other env variables to frontend service.
+    command: ['bun', 'run', 'start']
+    restart: always
+    # deploy:
+    #   replicas: 3
+
+  backend:
+    env_file: .env.production
+    command: ['bun', 'run', 'start']
+    restart: always
+    # deploy:
+    #   replicas: 3
+
+  postgres:
+    env_file: .env.production

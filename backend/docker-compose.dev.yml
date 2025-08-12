@@ -1,0 +1,22 @@
+services:
+  frontend:
+    build:
+      target: dev # Use the 'dev' stage from the Dockerfile
+    environment:
+      NODE_ENV: development
+      CHOKIDAR_USEPOLLING: true
+      # WATCHPACK_POLLING: true
+    command: ['bun', 'run', 'dev']
+    volumes:
+      - ../frontend:/usr/src/app # Mount the frontend directory
+      - /usr/src/app/node_modules # Avoid overwriting node_modules
+
+  backend:
+    env_file: .env.development
+    command: ['bun', 'run', 'dev']
+    volumes:
+      - .:/usr/src/app # Mount the backend directory
+      - /usr/src/app/node_modules # Avoid overwriting node_modules
+
+  postgres:
+    env_file: .env.development
