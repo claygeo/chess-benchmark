@@ -6,7 +6,16 @@ import { Card } from './Card';
 
 export const ExerciseList = () => {
   return (
-    <div className="flex space-x-4">
+    <div 
+      className="flex space-x-4"
+      style={{
+        display: 'flex',
+        gap: '20px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexWrap: 'wrap'
+      }}
+    >
       <Card
         icon={FaChess}
         title="Spatial Memory"
@@ -23,7 +32,7 @@ export const ExerciseList = () => {
         icon={BiSolidChess}
         title="Coordinate Vision"
         description="Practice visualizing chess board coordinates"
-        route="/exercises/moves/knight"
+        route="/exercises/coordinate-vision"
       />
     </div>
   );
