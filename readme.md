@@ -204,13 +204,17 @@ chessbenchmark/
 
 ## Visuals
 
-The application features a consistent dark theme design optimized for extended training sessions:
+Dashboard:
+<img width="1892" height="897" alt="chess-11" src="https://github.com/user-attachments/assets/adfa0488-7c48-4a53-8731-a83937c262e2" />
 
-- **Color Scheme**: Dark background (#1a1a1a) with yellow accents (#EAB308)
-- **Chess Board**: Standard light/dark square pattern with smooth piece animations
-- **UI Components**: Modern card-based layout with subtle shadows and animations
-- **Feedback System**: Color-coded success/error states with smooth transitions
-- **Trail Visualization**: Bright yellow highlighting system for move tracking
+Spatial Memory:
+<img width="1887" height="897" alt="chess-12" src="https://github.com/user-attachments/assets/38ed4bea-f8af-4cf1-8b89-0079895683fa" />
+
+Verbal Memory:
+<img width="1895" height="900" alt="chess-13" src="https://github.com/user-attachments/assets/6f8c4112-918d-4062-aaaa-cca01a5108b4" />
+
+Coordinate Vision:
+<img width="1888" height="896" alt="chess-14" src="https://github.com/user-attachments/assets/1f2e19e1-6b8e-4aaf-9b31-825baf045c50" />
 
 ## Development Notes
 
