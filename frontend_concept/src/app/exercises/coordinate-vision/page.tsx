@@ -361,7 +361,6 @@ export default function CoordinateVisionPage() {
               id="coordinate-vision-board"
               position={'start'}
               arePiecesDraggable={false}
-              boardStyle={{ borderRadius: '4px' }}
               customSquareStyles={getSquareStyles()}
               animationDuration={0}
               showBoardNotation={true}
@@ -504,7 +503,7 @@ export default function CoordinateVisionPage() {
                 color: isCorrect ? '#4CAF50' : '#f44336',
                 marginBottom: '8px'
               }}>
-                {isCorrect ? '✓ Correct!' : '✗ Incorrect'}
+                {isCorrect ? 'âœ" Correct!' : 'âœ— Incorrect'}
               </div>
               <div style={{ fontSize: '14px', color: '#ccc' }}>
                 The square was: <span style={{ fontWeight: 'bold', color: '#fff' }}>{targetSquare.toUpperCase()}</span>
@@ -704,7 +703,6 @@ export default function CoordinateVisionPage() {
                 id="coordinate-vision-board"
                 position={'start'}
                 arePiecesDraggable={false}
-                boardStyle={{ borderRadius: '8px' }}
                 customSquareStyles={getSquareStyles()}
                 animationDuration={0}
                 showBoardNotation={true}
@@ -795,7 +793,7 @@ export default function CoordinateVisionPage() {
                   color: isCorrect ? '#4CAF50' : '#f44336',
                   marginBottom: '12px'
                 }}>
-                  {isCorrect ? '✓ Correct!' : '✗ Incorrect'}
+                  {isCorrect ? 'âœ" Correct!' : 'âœ— Incorrect'}
                 </div>
                 <div style={{ fontSize: '16px', color: '#ccc' }}>
                   The square was: <span style={{ fontWeight: 'bold', color: '#fff', fontSize: '18px' }}>

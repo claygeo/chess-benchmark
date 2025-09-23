@@ -955,7 +955,6 @@ export default function GameMemoryPage() {
               position={currentPosition}
               onPieceDrop={onDrop}
               arePiecesDraggable={canMakeMove}
-              boardStyle={{ borderRadius: '4px' }}
               customSquareStyles={getEnhancedSquareStyles()}
               animationDuration={200}
             />
@@ -1110,7 +1109,6 @@ export default function GameMemoryPage() {
                 position={currentPosition}
                 onPieceDrop={onDrop}
                 arePiecesDraggable={canMakeMove}
-                boardStyle={{ borderRadius: '4px' }}
                 customSquareStyles={getEnhancedSquareStyles()}
                 animationDuration={200}
               />
