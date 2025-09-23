@@ -1,8 +1,0 @@
-1. Frontend is using bun with Next.js app router, written in TypeScript.
-2. Minimize 'use client' usage: Prefer server components and Next.js SSR features. Use 'use client' only for Web API access in small components. Avoid using 'use client' for data fetching or state management.
-3. Implement styling using and Tailwind with Postcss, prefer responsive design with mobile-first approach.
-4. Implement features using smart container components that fetch data and dumb presentational components that render them.
-5. Use React.memo() for component memoization when appropriate.
-6. Use functional components.
-7. Please ask clarifying questions when you are unsure about the requirements.
-8. Functions should be written as const arrow functions.
