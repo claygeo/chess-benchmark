@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { ThemeProvider } from 'next-themes';
 import { Header } from '@/components/Header/Header';
 import './globals.css';
 
@@ -29,16 +28,14 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ 
-          backgroundColor: '#1a1a1a', 
+        style={{
+          backgroundColor: '#1a1a1a',
           color: '#ffffff',
           minHeight: '100vh'
         }}
       >
-        <ThemeProvider defaultTheme="dark" enableSystem={false}>
-          <Header />
-          {children}
-        </ThemeProvider>
+        <Header />
+        {children}
       </body>
     </html>
   );

@@ -20,7 +20,6 @@
   "dependencies": {
     "chess.js": "^1.0.0-beta.8",
     "next": "14.2.14",
-    "next-themes": "^0.3.0",
     "react": "^18",
     "react-chessboard": "^4.7.1",
     "react-dom": "^18",
