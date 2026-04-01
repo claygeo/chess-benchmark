@@ -1,16 +1,16 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { useMobile } from '@/hooks/useMobile';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { DifficultyLevel, verbalDifficulty } from '@/config/difficulty';
+import { OpeningName, verbalOpenings } from '@/config/openings';
 import { useGameScoring } from '@/hooks/useGameScoring';
+import { useMobile } from '@/hooks/useMobile';
 import { useTimer } from '@/hooks/useTimer';
-import { verbalOpenings, OpeningName } from '@/config/openings';
-import { verbalDifficulty, DifficultyLevel } from '@/config/difficulty';
 import { sliderThumbCSS } from '@/utils/styles';
-import { SelectionPanel } from './components/SelectionPanel';
-import { StudyPanel } from './components/StudyPanel';
 import { RecallPanel } from './components/RecallPanel';
 import { ResultsPanel } from './components/ResultsPanel';
+import { SelectionPanel } from './components/SelectionPanel';
+import { StudyPanel } from './components/StudyPanel';
 
 enum GamePhase {
   SELECTION = 'selection',
@@ -22,7 +22,7 @@ enum GamePhase {
 export default function SanMemoryPage() {
   const { isMobile, isMounted } = useMobile();
   const { score, bestScore, streak, round, addScore, resetStreak, nextRound, resetScoring } = useGameScoring();
-  const { timeLeftSeconds, startSecondsCountdown, clearTimer } = useTimer();
+  const { clearTimer } = useTimer();
 
   // Core game state
   const [gamePhase, setGamePhase] = useState<GamePhase>(GamePhase.SELECTION);
@@ -302,7 +302,7 @@ export default function SanMemoryPage() {
 
   return (
     <div
-      className={`flex flex-col items-center justify-start min-h-screen bg-chess-bg text-white font-[Arial,sans-serif] box-border ${isMobile ? 'p-2.5 pt-2.5' : 'p-[15px] pt-[45px]'}`}
+      className={`flex flex-col items-center justify-start min-h-screen bg-chess-bg text-white font-[Arial,sans-serif] box-border ${isMobile ? 'p-2.5' : 'p-[15px] pt-[45px]'}`}
     >
       <style dangerouslySetInnerHTML={{ __html: sliderThumbCSS }} />
 

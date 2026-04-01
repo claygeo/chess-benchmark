@@ -1,17 +1,17 @@
 'use client';
 
 import { Chess } from 'chess.js';
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { DifficultyLevel, spatialDifficulty } from '@/config/difficulty';
+import { OpeningName, spatialOpenings } from '@/config/openings';
 import { useMobile } from '@/hooks/useMobile';
-import { spatialOpenings, OpeningName } from '@/config/openings';
-import { spatialDifficulty, DifficultyLevel } from '@/config/difficulty';
 import GameBoard, { StatsCard } from './components/GameBoard';
-import type { PieceTrail, DestinationFlash } from './components/GameBoard';
+import type { DestinationFlash, PieceTrail } from './components/GameBoard';
 import {
-  DesktopOpeningPanel,
   DesktopControlsPanel,
-  MobileScoreCard,
+  DesktopOpeningPanel,
   MobileOpeningSelection,
+  MobileScoreCard,
   MobileTrainingControls,
 } from './components/SelectionPanel';
 
@@ -43,7 +43,7 @@ export default function GameMemoryPage() {
   const [customAnimationSpeed, setCustomAnimationSpeed] = useState(1200);
 
   // Move tracking
-  const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
+  const [, setCurrentMoveIndex] = useState(0);
   const [userMoves, setUserMoves] = useState<string[]>([]);
   const [openingMoves, setOpeningMoves] = useState<string[]>([...spatialOpenings['Ruy Lopez']]);
 

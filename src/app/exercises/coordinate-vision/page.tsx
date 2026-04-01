@@ -1,15 +1,15 @@
 'use client';
 
-import React, { useState, useCallback, useRef } from 'react';
-import { useMobile } from '@/hooks/useMobile';
-import { useGameScoring } from '@/hooks/useGameScoring';
-import { useTimer } from '@/hooks/useTimer';
+import React, { useCallback, useRef, useState } from 'react';
 import { coordinateDifficulty, DifficultyLevel } from '@/config/difficulty';
+import { useGameScoring } from '@/hooks/useGameScoring';
+import { useMobile } from '@/hooks/useMobile';
+import { useTimer } from '@/hooks/useTimer';
 import { generateRandomSquare } from '@/utils/chessUtils';
 import { COLORS } from '@/utils/styles';
-import SelectionPanel from './components/SelectionPanel';
 import GameBoard from './components/GameBoard';
 import ResultsPanel from './components/ResultsPanel';
+import SelectionPanel from './components/SelectionPanel';
 
 type GamePhase = 'selection' | 'playing' | 'feedback' | 'results';
 

@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
+import { DifficultyLevel, verbalDifficulty } from '@/config/difficulty';
 import { OpeningName, verbalOpenings } from '@/config/openings';
-import { verbalDifficulty, DifficultyLevel } from '@/config/difficulty';
 import { sliderStyles, sliderThumbCSS } from '@/utils/styles';
 
 interface SelectionPanelProps {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 export function useGameScoring() {
   const [score, setScore] = useState(0);

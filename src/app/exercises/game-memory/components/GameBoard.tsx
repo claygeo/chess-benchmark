@@ -119,7 +119,7 @@ export default function GameBoard({
 
             <div className="flex items-center gap-1">
               <div
-                className={`rounded-sm ${isMobile ? 'w-2.5 h-2.5' : 'w-3 h-3'}`}
+                className={`rounded-sm ${isMobile ? 'size-2.5' : 'size-3'}`}
                 style={{
                   backgroundColor: `${TRAIL_YELLOW}BB`,
                   border: `1px solid ${TRAIL_YELLOW}`
@@ -131,7 +131,7 @@ export default function GameBoard({
             {destinationFlashes.length > 0 && (
               <div className="flex items-center gap-1">
                 <div
-                  className={`rounded-sm ${isMobile ? 'w-2.5 h-2.5' : 'w-3 h-3'}`}
+                  className={`rounded-sm ${isMobile ? 'size-2.5' : 'size-3'}`}
                   style={{
                     backgroundColor: TRAIL_YELLOW,
                     border: `2px solid ${TRAIL_YELLOW}`,

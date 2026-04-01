@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { generateRandomSquare, formatTime, formatTimeSimple, STARTING_FEN } from '../chessUtils';
+import { describe, expect, it } from 'vitest';
+import { formatTime, formatTimeSimple, generateRandomSquare, STARTING_FEN } from '../chessUtils';
 
 describe('generateRandomSquare', () => {
   it('returns a valid chess square', () => {

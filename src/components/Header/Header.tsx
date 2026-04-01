@@ -1,10 +1,10 @@
 'use client';
+import Link from 'next/link';
 import { useState } from 'react';
 import { FaChessBoard } from 'react-icons/fa6';
 import { PiGearSixDuotone } from 'react-icons/pi';
 import { project } from '@/app/project';
 import { ThemeToggle } from '../ThemeToggle';
-import Link from 'next/link';
 
 export const Header = () => {
   const [showSettings, setShowSettings] = useState(false);

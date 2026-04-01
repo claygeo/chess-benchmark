@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { spatialOpenings, OpeningName } from '@/config/openings';
-import { spatialDifficulty, DifficultyLevel } from '@/config/difficulty';
+import { DifficultyLevel, spatialDifficulty } from '@/config/difficulty';
+import { OpeningName, spatialOpenings } from '@/config/openings';
 import { sliderStyles, sliderThumbCSS } from '@/utils/styles';
 
 export interface SelectionPanelProps {

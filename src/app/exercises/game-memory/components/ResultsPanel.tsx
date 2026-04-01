@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 
 // The results display in this exercise is integrated into the existing UI:
 // - The status message ("Correct! +X points" / "Incorrect! Try again") appears

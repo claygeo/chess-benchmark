@@ -2,7 +2,7 @@
 const fs = require('fs');
 
 module.exports = {
-  extends: ['next', 'prettier', 'react-app', 'react-app/jest', 'plugin:tailwindcss/recommended'],
+  extends: ['next', 'prettier', 'plugin:@typescript-eslint/recommended', 'plugin:tailwindcss/recommended'],
   parserOptions: {
     babelOptions: {
       presets: [require.resolve('next/babel')],
@@ -70,6 +70,13 @@ module.exports = {
     // App router
     {
       files: ['src/app/**/{page,layout,not-found}.tsx'],
+      rules: {
+        'import/no-default-export': 'off',
+      },
+    },
+    // Component files in exercise subdirectories
+    {
+      files: ['src/app/**/components/*.tsx'],
       rules: {
         'import/no-default-export': 'off',
       },
