@@ -9,23 +9,6 @@
   --accent-yellow: #EAB308;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #1a1a1a;
-    --foreground: #ffffff;
-    --card-background: #2a2a2a;
-    --accent-yellow: #EAB308;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a1a1a;
-    --foreground: #ffffff;
-    --card-background: #2a2a2a;
-    --accent-yellow: #EAB308;
-  }
-}
 
 html, body {
   background-color: #1a1a1a !important;

@@ -6,16 +6,7 @@ import { Card } from './Card';
 
 export const ExerciseList = () => {
   return (
-    <div 
-      className="flex space-x-4"
-      style={{
-        display: 'flex',
-        gap: '20px',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexWrap: 'wrap'
-      }}
-    >
+    <div className="flex flex-wrap items-center justify-center gap-5">
       <Card
         icon={FaChess}
         title="Spatial Memory"
