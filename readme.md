@@ -3,6 +3,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![CI](https://github.com/claygeo/chess-benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/claygeo/chess-benchmark/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-Proprietary-red)](#license)
 
 A chess cognitive training platform with three exercises targeting board visualization, notation recall, and coordinate recognition. Features animated move playback, progressive difficulty scaling, timed challenges, and a scoring engine with streak bonuses.
@@ -182,9 +183,10 @@ The orchestrator page owns all state and passes props downward. Components are p
 | Chess Engine | chess.js |
 | Board Renderer | react-chessboard |
 | Styling | Tailwind CSS 3.4 + inline styles |
-| Theme | next-themes (dark mode default) |
 | Icons | react-icons |
 | Font | Geist Sans + Geist Mono (local woff) |
+| Testing | Vitest 4 + React Testing Library + jsdom |
+| CI | GitHub Actions (lint, build, test) |
 | Build | Static export (`next export`) |
 | Hosting | Netlify (static CDN) |
 
@@ -217,15 +219,14 @@ src/
 │   │           ├── RecallPanel.tsx
 │   │           └── ResultsPanel.tsx
 │   ├── globals.css
-│   ├── layout.tsx                        # Root layout with ThemeProvider
+│   ├── layout.tsx                        # Root layout
 │   ├── page.tsx                          # Landing page
 │   └── project.ts                        # App metadata
 ├── components/
 │   ├── Card.tsx                          # Exercise card with Next.js Link
 │   ├── ErrorBoundary.tsx                 # React error boundary
 │   ├── ExerciseList.tsx                  # Exercise card grid
-│   ├── Header/Header.tsx                 # Nav with settings dropdown
-│   └── ThemeToggle.tsx                   # Dark/light toggle
+│   └── Header/Header.tsx                 # Navigation bar with logo
 ├── config/
 │   ├── difficulty.ts                     # Centralized difficulty presets
 │   └── openings.ts                       # Chess opening definitions
@@ -244,7 +245,7 @@ src/
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 20+
 - npm or Bun
 
 ### Install and Run
@@ -266,6 +267,54 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run build` | Static export to `out/` directory |
 | `npm run start` | Serve production build locally |
 | `npm run lint` | ESLint with auto-fix |
+| `npm test` | Run unit & component tests (Vitest) |
+| `npm run test:watch` | Run tests in watch mode |
+
+---
+
+## Testing
+
+63 tests across 10 test files covering utilities, hooks, and components.
+
+| Layer | Framework | Files |
+|-------|-----------|-------|
+| Unit tests | Vitest + jsdom | `src/utils/__tests__/`, `src/hooks/__tests__/` |
+| Component tests | Vitest + React Testing Library | `src/components/__tests__/`, `src/app/exercises/*/__tests__/` |
+
+```bash
+npm test              # run all tests
+npm run test:watch    # watch mode
+```
+
+**CI pipeline** runs on every push and PR via GitHub Actions: lint, build, and test.
+
+---
+
+## Performance
+
+Benchmarked on Netlify CDN (April 2026). Grade: **A** (8/8 budget checks passing).
+
+| Page | Full Load | First Load JS |
+|------|-----------|---------------|
+| Homepage | 287ms | 97.6 KB |
+| Spatial Memory | 749ms | 126 KB |
+| Verbal Memory | 147ms | 92.9 KB |
+| Coordinate Vision | 150ms | 118 KB |
+
+Shared JS across all routes: 87.3 KB (React runtime + shared components). All pages statically exported to CDN with zero server-side rendering overhead.
+
+---
+
+## Quality
+
+| Check | Result |
+|-------|--------|
+| ESLint | 0 warnings, 0 errors |
+| TypeScript | Strict mode, no errors |
+| Unit & Component Tests | 63/63 passing |
+| Build | All 5 routes export successfully |
+| QA (browser testing) | Health score: 97/100 |
+| Security Audit | 0 findings (static site, no backend/auth/secrets) |
 
 ---
 
