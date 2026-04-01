@@ -3,47 +3,21 @@ import { ExerciseList } from '@/components/ExerciseList';
 
 export default function Home() {
   return (
-    <div 
-      style={{ 
-        backgroundColor: '#1a1a1a',
-        minHeight: 'calc(100vh - 60px)', // Account for header height
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '40px 20px'
-      }}
-    >
-      <main style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '32px',
-        width: '100%',
-        maxWidth: '1200px'
-      }}>
-        <div style={{ textAlign: 'center' }}>
-          <h1 style={{ 
-            fontSize: '60px',
-            fontWeight: 'bold',
-            color: '#ffffff',
-            marginBottom: '16px'
-          }}>
+    <div className="flex min-h-[calc(100vh-60px)] flex-col items-center justify-center bg-chess-bg px-5 py-10">
+      <main className="flex w-full max-w-[1200px] flex-col items-center gap-8">
+        <div className="text-center">
+          <h1 className="mb-4 text-[60px] font-bold text-white">
             {project.title}
           </h1>
         </div>
 
-        <div style={{ textAlign: 'center' }}>
-          <h2 style={{ 
-            fontSize: '28px',
-            color: '#ffffff',
-            fontWeight: 'normal'
-          }}>
+        <div className="text-center">
+          <h2 className="text-[28px] font-normal text-white">
             {project.description}
           </h2>
         </div>
-        
-        <div style={{ marginTop: '20px' }}>
+
+        <div className="mt-5">
           <ExerciseList />
         </div>
       </main>

@@ -1,16 +1,24 @@
 {
-  "name": "cbm-web",
-  "version": "0.1.0",
+  "name": "chess-benchmark",
+  "version": "1.0.0",
+  "description": "Chess cognitive training platform with spatial memory, verbal memory, and coordinate vision exercises",
+  "author": "Clay George",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claygeo/chess-benchmark"
+  },
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "chess.js": "^1.0.0-beta.8",
-    "firebase": "^10.14.0",
     "next": "14.2.14",
     "next-themes": "^0.3.0",
     "react": "^18",
@@ -19,22 +27,28 @@
     "react-icons": "^5.3.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^8.58.0",
     "@typescript-eslint/parser": "^8.8.0",
+    "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.14",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-react": "7.33.2",
-    "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-tailwindcss": "^3.13.0",
+    "jsdom": "^29.0.1",
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.2"
   }
 }

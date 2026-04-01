@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useState } from 'react';
 import { FaChessBoard } from 'react-icons/fa6';
 import { PiGearSixDuotone } from 'react-icons/pi';
@@ -8,81 +9,29 @@ import { ThemeToggle } from '../ThemeToggle';
 export const Header = () => {
   const [showSettings, setShowSettings] = useState(false);
   return (
-    <header 
-      className="flex items-center justify-between p-4"
-      style={{ 
-        backgroundColor: '#2a2a2a',
-        borderBottom: '1px solid #333',
-        color: '#ffffff'
-      }}
-    >
-      <div
-        className="ml-10 flex cursor-pointer items-center text-lg font-bold"
-        onClick={() => (window.location.href = '/')}
-        style={{ color: '#ffffff' }}
+    <header className="flex items-center justify-between border-b border-chess-surface-light bg-chess-surface p-4 text-white">
+      <Link
+        href="/"
+        className="ml-10 flex cursor-pointer items-center text-lg font-bold text-white no-underline"
       >
         <FaChessBoard className="mr-2" />
         <span className="text-xl">{project.title}</span>
-      </div>
+      </Link>
       <div className="relative">
-        <button 
-          className="mr-8" 
+        <button
+          className="mr-8 text-white"
           onClick={() => setShowSettings(!showSettings)}
-          style={{ color: '#ffffff' }}
         >
           <PiGearSixDuotone size={24} />
         </button>
         {showSettings && (
-          <div 
-            className="absolute right-0 mt-2 w-48 rounded-md shadow-lg"
-            style={{ 
-              backgroundColor: '#333',
-              border: '1px solid #444'
-            }}
-          >
+          <div className="absolute right-0 mt-2 w-48 rounded-md border border-[#444] bg-chess-surface-light shadow-lg">
             <ul>
-              <li 
-                className="cursor-pointer px-4 py-2"
-                style={{ 
-                  color: '#ffffff',
-                  borderBottom: '1px solid #444'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#444'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-              >
+              <li className="cursor-pointer border-b border-[#444] px-4 py-2 text-white hover:bg-[#444]">
                 Language
               </li>
-              <li 
-                className="cursor-pointer px-4 py-2"
-                style={{ 
-                  color: '#ffffff',
-                  borderBottom: '1px solid #444'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#444'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-              >
+              <li className="cursor-pointer border-b border-[#444] px-4 py-2 text-white hover:bg-[#444]">
                 <ThemeToggle />
-              </li>
-              <li
-                className="cursor-pointer px-4 py-2"
-                style={{ 
-                  color: '#ffffff',
-                  borderBottom: '1px solid #444'
-                }}
-                onClick={() => (window.location.href = '/login')}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#444'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-              >
-                Login
-              </li>
-              <li
-                className="cursor-pointer px-4 py-2"
-                style={{ color: '#ffffff' }}
-                onClick={() => (window.location.href = '/register')}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#444'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-              >
-                Register
               </li>
             </ul>
           </div>
